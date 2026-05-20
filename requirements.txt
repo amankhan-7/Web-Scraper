@@ -1,0 +1,6 @@
+#requirements of project
+#postGres DB connection string
+playwright
+python-dotenv
+psycopg2-binary
+requests
