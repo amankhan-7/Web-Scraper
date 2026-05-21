@@ -1,8 +1,1 @@
-
-    print(
-        "product_categories filled"
-    )
-
-
-if __name__ == "__main__":
-    main()
+await page.goto("https://blinkit.com", wait_until="networkidle")

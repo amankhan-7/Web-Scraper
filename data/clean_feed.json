@@ -1,0 +1,470 @@
+[
+  {
+    "url": "https://blinkit.com/feed/?template_version=9",
+    "widgets_count": 8,
+    "widgets": [
+      {
+        "type": "banner",
+        "image": "https://cdn.grofers.com/layout-engine/2026-01/Frame-1437256605-2-2.jpg",
+        "deeplink": "grofers://collection-products?collection_uuid=736e6fc2-8c33-4c35-9821-d325509aa0e5"
+      },
+      {
+        "type": "category_grid",
+        "items": [
+          {
+            "title": "1 - Paan Corner",
+            "image": "https://cdn.grofers.com/layout-engine/2022-12/paan-corner_web.png",
+            "deeplink": "grofers://listing?l0_cat=229&l1_cat=1982"
+          },
+          {
+            "title": "2 - Dairy, Bread & Eggs",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-2_10.png",
+            "deeplink": "grofers://listing?l0_cat=14&l1_cat=922"
+          },
+          {
+            "title": "3 - Fruits & Vegetables",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-3_9.png",
+            "deeplink": "grofers://listing?l0_cat=1487&l1_cat=1489"
+          },
+          {
+            "title": "4 - Cold Drinks & Juices ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-4_9.png",
+            "deeplink": "grofers://listing?l0_cat=332&l1_cat=1102"
+          },
+          {
+            "title": "5 - Snacks & Munchies ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-5_4.png",
+            "deeplink": "grofers://listing?l0_cat=1237&l1_cat=940"
+          },
+          {
+            "title": "6 - Breakfast & Instant Food",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-6_5.png",
+            "deeplink": "grofers://listing?l0_cat=15&l1_cat=954"
+          },
+          {
+            "title": "7 - Sweet Tooth",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-7_3.png",
+            "deeplink": "grofers://listing?l0_cat=9&l1_cat=944"
+          },
+          {
+            "title": "8 - Bakery & Biscuits",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-8_4.png",
+            "deeplink": "grofers://listing?l0_cat=888&l1_cat=28"
+          },
+          {
+            "title": "9 - Tea, Coffee & Health Drink ",
+            "image": "https://cdn.grofers.com/layout-engine/2025-11/Slice-7-1_0.png",
+            "deeplink": "grofers://listing?l0_cat=12&l1_cat=957"
+          },
+          {
+            "title": "10 - Atta, Rice & Dal",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-10.png",
+            "deeplink": "grofers://listing?l0_cat=16&l1_cat=1165"
+          },
+          {
+            "title": "11 - Masala, Oil & More ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-11.png",
+            "deeplink": "grofers://listing?l0_cat=1557&l1_cat=50"
+          },
+          {
+            "title": "12 - Sauces & Spreads",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-12.png",
+            "deeplink": "grofers://listing?l0_cat=972&l1_cat=1131"
+          },
+          {
+            "title": "13 - Chicken, Meat & Fish ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-13.png",
+            "deeplink": "grofers://listing?l0_cat=4&l1_cat=1362"
+          },
+          {
+            "title": "14 - Organic & Healthy Living",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-14.png",
+            "deeplink": "grofers://listing?l0_cat=175&l1_cat=801"
+          },
+          {
+            "title": "15 - Baby Care",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-15.png",
+            "deeplink": "grofers://listing?l0_cat=7&l1_cat=1000"
+          },
+          {
+            "title": "16 - Pharma & Wellness",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-16.png",
+            "deeplink": "grofers://listing?l0_cat=287&l1_cat=1826"
+          },
+          {
+            "title": "17 - Clening Essentials",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-17.png",
+            "deeplink": "grofers://listing?l0_cat=18&l1_cat=986"
+          },
+          {
+            "title": "18 - Home & Office ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-18.png",
+            "deeplink": "grofers://listing?l0_cat=1379&l1_cat=1075"
+          },
+          {
+            "title": "19 - Personal Care",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-19.png",
+            "deeplink": "grofers://listing?l0_cat=163&l1_cat=696"
+          },
+          {
+            "title": "20 - Pet Care",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-20.png",
+            "deeplink": "grofers://listing?l0_cat=5&l1_cat=133"
+          }
+        ]
+      },
+      {
+        "type": "product_collection",
+        "title": "Rolling paper & tobacco",
+        "deeplink": "grofers://collection-products?collection_uuid=38d77960-3850-412d-9e3a-4b8c08f8b64f",
+        "collection_uuid": "38d77960-3850-412d-9e3a-4b8c08f8b64f"
+      },
+      {
+        "type": "product_collection",
+        "title": "Snacks & Munchies",
+        "deeplink": "grofers://collection-products?collection_uuid=264b75b3-e587-4d6a-9aca-e3773d71b865",
+        "collection_uuid": "264b75b3-e587-4d6a-9aca-e3773d71b865"
+      },
+      {
+        "type": "product_collection",
+        "title": "Hookah",
+        "deeplink": "grofers://collection-products?collection_uuid=7feddbca-800a-48ef-86b1-ef88f15e87a9",
+        "collection_uuid": "7feddbca-800a-48ef-86b1-ef88f15e87a9"
+      },
+      {
+        "type": "product_collection",
+        "title": "Mouth fresheners",
+        "deeplink": "grofers://collection-products?collection_uuid=25440383-3328-4db6-81c4-0beb533a4d0b",
+        "collection_uuid": "25440383-3328-4db6-81c4-0beb533a4d0b"
+      },
+      {
+        "type": "product_collection",
+        "title": "Cold Drinks & Juices",
+        "deeplink": "grofers://collection-products?collection_uuid=a1239437-6d7f-4050-b76c-ec94f7f273c1",
+        "collection_uuid": "a1239437-6d7f-4050-b76c-ec94f7f273c1"
+      },
+      {
+        "type": "product_collection",
+        "title": "Candies & Gums",
+        "deeplink": "grofers://collection-products?collection_uuid=228d4b03-8445-4920-a626-345266ab616a",
+        "collection_uuid": "228d4b03-8445-4920-a626-345266ab616a"
+      }
+    ]
+  },
+  {
+    "url": "https://blinkit.com/feed/?template_version=9",
+    "widgets_count": 9,
+    "widgets": [
+      {
+        "type": "banner",
+        "image": "https://cdn.grofers.com/layout-engine/2026-01/Frame-1437256605-2-2.jpg",
+        "deeplink": "grofers://collection-products?collection_uuid=736e6fc2-8c33-4c35-9821-d325509aa0e5"
+      },
+      {
+        "type": "category_grid",
+        "items": [
+          {
+            "title": "1 - Paan Corner",
+            "image": "https://cdn.grofers.com/layout-engine/2022-12/paan-corner_web.png",
+            "deeplink": "grofers://listing?l0_cat=229&l1_cat=1982"
+          },
+          {
+            "title": "2 - Dairy, Bread & Eggs",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-2_10.png",
+            "deeplink": "grofers://listing?l0_cat=14&l1_cat=922"
+          },
+          {
+            "title": "3 - Fruits & Vegetables",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-3_9.png",
+            "deeplink": "grofers://listing?l0_cat=1487&l1_cat=1489"
+          },
+          {
+            "title": "4 - Cold Drinks & Juices ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-4_9.png",
+            "deeplink": "grofers://listing?l0_cat=332&l1_cat=1102"
+          },
+          {
+            "title": "5 - Snacks & Munchies ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-5_4.png",
+            "deeplink": "grofers://listing?l0_cat=1237&l1_cat=940"
+          },
+          {
+            "title": "6 - Breakfast & Instant Food",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-6_5.png",
+            "deeplink": "grofers://listing?l0_cat=15&l1_cat=954"
+          },
+          {
+            "title": "7 - Sweet Tooth",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-7_3.png",
+            "deeplink": "grofers://listing?l0_cat=9&l1_cat=944"
+          },
+          {
+            "title": "8 - Bakery & Biscuits",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-8_4.png",
+            "deeplink": "grofers://listing?l0_cat=888&l1_cat=28"
+          },
+          {
+            "title": "9 - Tea, Coffee & Health Drink ",
+            "image": "https://cdn.grofers.com/layout-engine/2025-11/Slice-7-1_0.png",
+            "deeplink": "grofers://listing?l0_cat=12&l1_cat=957"
+          },
+          {
+            "title": "10 - Atta, Rice & Dal",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-10.png",
+            "deeplink": "grofers://listing?l0_cat=16&l1_cat=1165"
+          },
+          {
+            "title": "11 - Masala, Oil & More ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-11.png",
+            "deeplink": "grofers://listing?l0_cat=1557&l1_cat=50"
+          },
+          {
+            "title": "12 - Sauces & Spreads",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-12.png",
+            "deeplink": "grofers://listing?l0_cat=972&l1_cat=1131"
+          },
+          {
+            "title": "13 - Chicken, Meat & Fish ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-13.png",
+            "deeplink": "grofers://listing?l0_cat=4&l1_cat=1362"
+          },
+          {
+            "title": "14 - Organic & Healthy Living",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-14.png",
+            "deeplink": "grofers://listing?l0_cat=175&l1_cat=801"
+          },
+          {
+            "title": "15 - Baby Care",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-15.png",
+            "deeplink": "grofers://listing?l0_cat=7&l1_cat=1000"
+          },
+          {
+            "title": "16 - Pharma & Wellness",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-16.png",
+            "deeplink": "grofers://listing?l0_cat=287&l1_cat=1826"
+          },
+          {
+            "title": "17 - Clening Essentials",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-17.png",
+            "deeplink": "grofers://listing?l0_cat=18&l1_cat=986"
+          },
+          {
+            "title": "18 - Home & Office ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-18.png",
+            "deeplink": "grofers://listing?l0_cat=1379&l1_cat=1075"
+          },
+          {
+            "title": "19 - Personal Care",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-19.png",
+            "deeplink": "grofers://listing?l0_cat=163&l1_cat=696"
+          },
+          {
+            "title": "20 - Pet Care",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-20.png",
+            "deeplink": "grofers://listing?l0_cat=5&l1_cat=133"
+          }
+        ]
+      },
+      {
+        "type": "product_collection",
+        "title": "Dairy, Bread & Eggs",
+        "deeplink": "grofers://collection-products?collection_uuid=b33208fc-433f-4219-843e-b7163f242094",
+        "collection_uuid": "b33208fc-433f-4219-843e-b7163f242094"
+      },
+      {
+        "type": "product_collection",
+        "title": "Rolling paper & tobacco",
+        "deeplink": "grofers://collection-products?collection_uuid=38d77960-3850-412d-9e3a-4b8c08f8b64f",
+        "collection_uuid": "38d77960-3850-412d-9e3a-4b8c08f8b64f"
+      },
+      {
+        "type": "product_collection",
+        "title": "Snacks & Munchies",
+        "deeplink": "grofers://collection-products?collection_uuid=264b75b3-e587-4d6a-9aca-e3773d71b865",
+        "collection_uuid": "264b75b3-e587-4d6a-9aca-e3773d71b865"
+      },
+      {
+        "type": "product_collection",
+        "title": "Hookah",
+        "deeplink": "grofers://collection-products?collection_uuid=7feddbca-800a-48ef-86b1-ef88f15e87a9",
+        "collection_uuid": "7feddbca-800a-48ef-86b1-ef88f15e87a9"
+      },
+      {
+        "type": "product_collection",
+        "title": "Mouth fresheners",
+        "deeplink": "grofers://collection-products?collection_uuid=25440383-3328-4db6-81c4-0beb533a4d0b",
+        "collection_uuid": "25440383-3328-4db6-81c4-0beb533a4d0b"
+      },
+      {
+        "type": "product_collection",
+        "title": "Cold Drinks & Juices",
+        "deeplink": "grofers://collection-products?collection_uuid=a1239437-6d7f-4050-b76c-ec94f7f273c1",
+        "collection_uuid": "a1239437-6d7f-4050-b76c-ec94f7f273c1"
+      },
+      {
+        "type": "product_collection",
+        "title": "Candies & Gums",
+        "deeplink": "grofers://collection-products?collection_uuid=228d4b03-8445-4920-a626-345266ab616a",
+        "collection_uuid": "228d4b03-8445-4920-a626-345266ab616a"
+      }
+    ]
+  },
+  {
+    "url": "https://blinkit.com/feed/?template_version=9",
+    "widgets_count": 9,
+    "widgets": [
+      {
+        "type": "banner",
+        "image": "https://cdn.grofers.com/layout-engine/2026-01/Frame-1437256605-2-2.jpg",
+        "deeplink": "grofers://collection-products?collection_uuid=736e6fc2-8c33-4c35-9821-d325509aa0e5"
+      },
+      {
+        "type": "category_grid",
+        "items": [
+          {
+            "title": "1 - Paan Corner",
+            "image": "https://cdn.grofers.com/layout-engine/2022-12/paan-corner_web.png",
+            "deeplink": "grofers://listing?l0_cat=229&l1_cat=1982"
+          },
+          {
+            "title": "2 - Dairy, Bread & Eggs",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-2_10.png",
+            "deeplink": "grofers://listing?l0_cat=14&l1_cat=922"
+          },
+          {
+            "title": "3 - Fruits & Vegetables",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-3_9.png",
+            "deeplink": "grofers://listing?l0_cat=1487&l1_cat=1489"
+          },
+          {
+            "title": "4 - Cold Drinks & Juices ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-4_9.png",
+            "deeplink": "grofers://listing?l0_cat=332&l1_cat=1102"
+          },
+          {
+            "title": "5 - Snacks & Munchies ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-5_4.png",
+            "deeplink": "grofers://listing?l0_cat=1237&l1_cat=940"
+          },
+          {
+            "title": "6 - Breakfast & Instant Food",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-6_5.png",
+            "deeplink": "grofers://listing?l0_cat=15&l1_cat=954"
+          },
+          {
+            "title": "7 - Sweet Tooth",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-7_3.png",
+            "deeplink": "grofers://listing?l0_cat=9&l1_cat=944"
+          },
+          {
+            "title": "8 - Bakery & Biscuits",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-8_4.png",
+            "deeplink": "grofers://listing?l0_cat=888&l1_cat=28"
+          },
+          {
+            "title": "9 - Tea, Coffee & Health Drink ",
+            "image": "https://cdn.grofers.com/layout-engine/2025-11/Slice-7-1_0.png",
+            "deeplink": "grofers://listing?l0_cat=12&l1_cat=957"
+          },
+          {
+            "title": "10 - Atta, Rice & Dal",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-10.png",
+            "deeplink": "grofers://listing?l0_cat=16&l1_cat=1165"
+          },
+          {
+            "title": "11 - Masala, Oil & More ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-11.png",
+            "deeplink": "grofers://listing?l0_cat=1557&l1_cat=50"
+          },
+          {
+            "title": "12 - Sauces & Spreads",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-12.png",
+            "deeplink": "grofers://listing?l0_cat=972&l1_cat=1131"
+          },
+          {
+            "title": "13 - Chicken, Meat & Fish ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-13.png",
+            "deeplink": "grofers://listing?l0_cat=4&l1_cat=1362"
+          },
+          {
+            "title": "14 - Organic & Healthy Living",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-14.png",
+            "deeplink": "grofers://listing?l0_cat=175&l1_cat=801"
+          },
+          {
+            "title": "15 - Baby Care",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-15.png",
+            "deeplink": "grofers://listing?l0_cat=7&l1_cat=1000"
+          },
+          {
+            "title": "16 - Pharma & Wellness",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-16.png",
+            "deeplink": "grofers://listing?l0_cat=287&l1_cat=1826"
+          },
+          {
+            "title": "17 - Clening Essentials",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-17.png",
+            "deeplink": "grofers://listing?l0_cat=18&l1_cat=986"
+          },
+          {
+            "title": "18 - Home & Office ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-18.png",
+            "deeplink": "grofers://listing?l0_cat=1379&l1_cat=1075"
+          },
+          {
+            "title": "19 - Personal Care",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-19.png",
+            "deeplink": "grofers://listing?l0_cat=163&l1_cat=696"
+          },
+          {
+            "title": "20 - Pet Care",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-20.png",
+            "deeplink": "grofers://listing?l0_cat=5&l1_cat=133"
+          }
+        ]
+      },
+      {
+        "type": "product_collection",
+        "title": "Dairy, Bread & Eggs",
+        "deeplink": "grofers://collection-products?collection_uuid=b33208fc-433f-4219-843e-b7163f242094",
+        "collection_uuid": "b33208fc-433f-4219-843e-b7163f242094"
+      },
+      {
+        "type": "product_collection",
+        "title": "Rolling paper & tobacco",
+        "deeplink": "grofers://collection-products?collection_uuid=38d77960-3850-412d-9e3a-4b8c08f8b64f",
+        "collection_uuid": "38d77960-3850-412d-9e3a-4b8c08f8b64f"
+      },
+      {
+        "type": "product_collection",
+        "title": "Snacks & Munchies",
+        "deeplink": "grofers://collection-products?collection_uuid=264b75b3-e587-4d6a-9aca-e3773d71b865",
+        "collection_uuid": "264b75b3-e587-4d6a-9aca-e3773d71b865"
+      },
+      {
+        "type": "product_collection",
+        "title": "Hookah",
+        "deeplink": "grofers://collection-products?collection_uuid=7feddbca-800a-48ef-86b1-ef88f15e87a9",
+        "collection_uuid": "7feddbca-800a-48ef-86b1-ef88f15e87a9"
+      },
+      {
+        "type": "product_collection",
+        "title": "Mouth fresheners",
+        "deeplink": "grofers://collection-products?collection_uuid=25440383-3328-4db6-81c4-0beb533a4d0b",
+        "collection_uuid": "25440383-3328-4db6-81c4-0beb533a4d0b"
+      },
+      {
+        "type": "product_collection",
+        "title": "Cold Drinks & Juices",
+        "deeplink": "grofers://collection-products?collection_uuid=a1239437-6d7f-4050-b76c-ec94f7f273c1",
+        "collection_uuid": "a1239437-6d7f-4050-b76c-ec94f7f273c1"
+      },
+      {
+        "type": "product_collection",
+        "title": "Candies & Gums",
+        "deeplink": "grofers://collection-products?collection_uuid=228d4b03-8445-4920-a626-345266ab616a",
+        "collection_uuid": "228d4b03-8445-4920-a626-345266ab616a"
+      }
+    ]
+  }
+]

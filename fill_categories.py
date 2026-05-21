@@ -8,49 +8,33 @@ load_dotenv()
 def main():
 
     connection = psycopg2.connect(
-        os.getenv(
-            "DATABASE_URL"
-        )
+        os.getenv("DATABASE_URL")
     )
 
-    cursor = (
-        connection.cursor()
-    )
+    cursor = connection.cursor()
 
     raw_path = "data/raw"
 
     categories = []
 
-    for folder in os.listdir(
-        raw_path
-    ):
+    for folder in os.listdir(raw_path):
 
-        folder_path = (
-            os.path.join(
-                raw_path,
-                folder
-            )
+        folder_path = os.path.join(
+            raw_path,
+            folder
         )
 
-        if os.path.isdir(
-            folder_path
-        ):
-            categories.append(
-                folder
-            )
+        if os.path.isdir(folder_path):
+
+            categories.append(folder)
 
     print(
-        f"Found "
-        f"{len(categories)} "
-        f"categories"
+        f"Found {len(categories)} categories"
     )
 
     query = """
-    INSERT INTO categories (
-        name
-    )
+    INSERT INTO product_categories (name)
     VALUES (%s)
-
     ON CONFLICT (name)
     DO NOTHING
     """
@@ -59,25 +43,17 @@ def main():
 
         cursor.execute(
             query,
-            (
-                category,
-            )
+            (category,)
         )
 
-        print(
-            f"Inserted: "
-            f"{category}"
-        )
+        print(f"Inserted: {category}")
 
     connection.commit()
 
     cursor.close()
     connection.close()
 
-    print(
-        "Categories saved "
-        "to Neon DB"
-    )
+    print("Categories saved to DB")
 
 
 if __name__ == "__main__":
