@@ -81,6 +81,17 @@ def extract_products():
                             "merchant_id"
                         ),
 
+                    "category":
+                        product.get(
+                          "category"
+                        ),
+                        
+                    "parent_category":
+                       product.get(
+                         "parent_category"
+                        ),
+       
+
                     "name":
                         (
                             product.get(

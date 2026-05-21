@@ -8,12 +8,29 @@ BASE_URL = (
 )
 
 
-def fetch_products(l0_cat, l1_cat):
+def fetch_products(
+    category_info
+):
+
+    l0_cat = (
+        category_info[
+            "l0_cat"
+        ]
+    )
+
+    l1_cat = (
+        category_info[
+            "l1_cat"
+        ]
+    )
+
     offset = 0
     limit = 15
+
     all_products = []
 
     while True:
+
         url = (
             f"{BASE_URL}"
             f"?offset={offset}"
@@ -24,14 +41,21 @@ def fetch_products(l0_cat, l1_cat):
             f"&page_index=1"
         )
 
-        print(f"\nCalling API:")
+        print(
+            f"\nCalling API:"
+        )
+
         print(url)
 
         try:
-            response = requests.post(
-                url,
-                headers=HEADERS,
-                timeout=30
+
+            response = (
+                requests.post(
+                    url,
+                    headers=
+                    HEADERS,
+                    timeout=30
+                )
             )
 
             print(
@@ -46,12 +70,20 @@ def fetch_products(l0_cat, l1_cat):
 
             response.raise_for_status()
 
-            data = response.json()
+            data = (
+                response.json()
+            )
 
             snippets = (
                 data
-                .get("response", {})
-                .get("snippets", [])
+                .get(
+                    "response",
+                    {}
+                )
+                .get(
+                    "snippets",
+                    []
+                )
             )
 
             print(
@@ -60,10 +92,57 @@ def fetch_products(l0_cat, l1_cat):
             )
 
             if not snippets:
+
                 print(
                     "No more snippets."
                 )
+
                 break
+
+            # Add category
+            # metadata to
+            # every product
+            for product in snippets:
+
+                product[
+                    "category"
+                ] = (
+                    category_info[
+                        "category"
+                    ]
+                )
+
+                product[
+                    "parent_category"
+                ] = (
+                    category_info[
+                        "parent_category"
+                    ]
+                )
+
+                product[
+                    "l0_cat"
+                ] = (
+                    category_info[
+                        "l0_cat"
+                    ]
+                )
+
+                product[
+                    "l1_cat"
+                ] = (
+                    category_info[
+                        "l1_cat"
+                    ]
+                )
+
+                product[
+                    "category_path"
+                ] = (
+                    category_info[
+                        "category_path"
+                    ]
+                )
 
             all_products.extend(
                 snippets
@@ -72,9 +151,11 @@ def fetch_products(l0_cat, l1_cat):
             offset += limit
 
         except Exception as e:
+
             print(
                 f"ERROR: {e}"
             )
+
             break
 
     return all_products

@@ -9,6 +9,8 @@ CREATE TABLE blinkit_products (
     name TEXT NOT NULL,
     brand TEXT,
 
+    category_id BIGINT REFERENCES product_categories(id),
+
     price NUMERIC(10,2),
     inventory INT,
 

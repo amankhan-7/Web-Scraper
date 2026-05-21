@@ -18,6 +18,7 @@ env/
 # Scraped data
 data/raw/
 data/extracted/
+data/cleaned/
 
 # Logs
 *.log
