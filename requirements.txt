@@ -4,3 +4,28 @@ playwright
 python-dotenv
 psycopg2-binary
 requests
+
+categories = [
+    "https://blinkit.com/cn/dairy-breakfast/milk/cid/14/922",
+    "https://blinkit.com/cn/dairy-breakfast/bread-pav/cid/14/953",
+    "https://blinkit.com/cn/dairy-breakfast/eggs/cid/14/1200",
+    "https://blinkit.com/cn/dairy-breakfast/flakes-kids-cereals/cid/14/954",
+    "https://blinkit.com/cn/dairy-breakfast/muesli-granola/cid/14/614",
+    "https://blinkit.com/cn/dairy-breakfast/oats/cid/14/584",
+    "https://blinkit.com/cn/dairy-breakfast/paneer-tofu/cid/14/923",
+    "https://blinkit.com/cn/dairy-breakfast/curd-yogurt/cid/14/123",
+    "https://blinkit.com/cn/dairy-breakfast/butter-more/cid/14/952",
+    "https://blinkit.com/cn/dairy-breakfast/cheese/cid/14/2253",
+    "https://blinkit.com/cn/dairy-breakfast/cream-whitener/cid/14/1092",
+    "https://blinkit.com/cn/dairy-breakfast/condensed-milk/cid/14/130",
+    "https://blinkit.com/cn/dairy-breakfast/vermicelli/cid/14/1140",
+    "https://blinkit.com/cn/dairy-breakfast/poha-daliya-other-grains/cid/14/1295",
+    "https://blinkit.com/cn/dairy-breakfast/peanut-butter/cid/14/644",
+    "https://blinkit.com/cn/dairy-breakfast/energy-bars/cid/14/2557",
+    "https://blinkit.com/cn/dairy-breakfast/lassi-shakes-more/cid/14/1184",
+    "https://blinkit.com/cn/dairy-breakfast/breakfast-mixes/cid/14/1612",
+    "https://blinkit.com/cn/dairy-breakfast/honey-chyawanprash/cid/14/609",
+    "https://blinkit.com/cn/dairy-breakfast/sausage-salami-ham/cid/14/1388",
+    "https://blinkit.com/cn/dairy-breakfast/batter/cid/14/1425"
+]
+

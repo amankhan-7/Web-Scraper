@@ -27,3 +27,15 @@ CREATE TABLE blinkit_products (
     created_at TIMESTAMP DEFAULT NOW(),
     updated_at TIMESTAMP DEFAULT NOW()
 );
+
+CREATE TABLE categories (
+    id BIGSERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    url TEXT
+);
+
+CREATE TABLE product_categories (
+    product_id BIGINT REFERENCES blinkit_products(product_id),
+    category_id BIGINT REFERENCES categories(id),
+    PRIMARY KEY (product_id, category_id)
+);

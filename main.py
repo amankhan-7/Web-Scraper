@@ -14,10 +14,11 @@ from utils.loggers import (
     setup_logger
 )
 
+from scraper.categories import main as scrape_categories
+
 logger = (
     setup_logger()
 )
-
 
 def main():
 
@@ -25,6 +26,10 @@ def main():
         "Starting Blinkit scraper..."
     )
 
+    # STEP 1: scrape raw data
+    scrape_categories()
+
+    # STEP 2: extract files
     raw_products = (
         extract_products()
     )
@@ -47,16 +52,13 @@ def main():
         f"products"
     )
 
-    save_products(
-        cleaned
-    )
+    save_products(cleaned)
 
     logger.info(
         f"Inserted "
         f"{len(cleaned)} "
         f"products into Neon DB"
     )
-
 
 if __name__ == "__main__":
     main()

@@ -8,18 +8,12 @@ BASE_URL = (
 )
 
 
-def fetch_products(
-        l0_cat=14,
-        l1_cat=922
-):
-
+def fetch_products(l0_cat, l1_cat):
     offset = 0
     limit = 15
-
     all_products = []
 
     while True:
-
         url = (
             f"{BASE_URL}"
             f"?offset={offset}"
@@ -30,28 +24,57 @@ def fetch_products(
             f"&page_index=1"
         )
 
-        response = requests.post(
-            url,
-            headers=HEADERS
-        )
+        print(f"\nCalling API:")
+        print(url)
 
-        data = response.json()
+        try:
+            response = requests.post(
+                url,
+                headers=HEADERS,
+                timeout=30
+            )
 
-        snippets = (
-            data
-            .get("response", {})
-            .get("snippets", [])
-        )
+            print(
+                f"Status Code: "
+                f"{response.status_code}"
+            )
 
-        if not snippets:
+            print(
+                f"Response preview: "
+                f"{response.text[:300]}"
+            )
+
+            response.raise_for_status()
+
+            data = response.json()
+
+            snippets = (
+                data
+                .get("response", {})
+                .get("snippets", [])
+            )
+
+            print(
+                f"Snippets found: "
+                f"{len(snippets)}"
+            )
+
+            if not snippets:
+                print(
+                    "No more snippets."
+                )
+                break
+
+            all_products.extend(
+                snippets
+            )
+
+            offset += limit
+
+        except Exception as e:
+            print(
+                f"ERROR: {e}"
+            )
             break
-
-        all_products.extend(snippets)
-
-        print(
-            f"Fetched {len(snippets)}"
-        )
-
-        offset += limit
 
     return all_products
