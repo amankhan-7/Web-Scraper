@@ -15,10 +15,19 @@ env/
 .vscode/
 .idea/
 
-# Scraped data
-data/raw/
-data/extracted/
-data/cleaned/
+# Ignore data contents
+data/**
+
+# Keep folder structure
+!data/
+!data/.gitkeep
+!data/raw/
+!data/cleaned/
+!data/extracted/
+
+!data/raw/.gitkeep
+!data/cleaned/.gitkeep
+!data/extracted/.gitkeep
 
 # Logs
 *.log

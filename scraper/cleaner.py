@@ -89,6 +89,34 @@ def clean_products(raw_products):
                     )
                 ),
 
+            # -----------------
+            # CATEGORY FIELDS
+            # -----------------
+
+            "category":
+                str(
+                    product.get(
+                        "category",
+                        ""
+                    )
+                ).strip(),
+
+            "parent_category":
+                str(
+                    product.get(
+                        "parent_category",
+                        ""
+                    )
+                ).strip(),
+
+            "ptype":
+                str(
+                    product.get(
+                        "ptype",
+                        ""
+                    )
+                ).strip(),
+
             "name":
                 str(
                     product.get(
@@ -160,7 +188,9 @@ def clean_products(raw_products):
         }
 
         # Skip invalid products
-        if not cleaned_product["product_id"]:
+        if not cleaned_product[
+            "product_id"
+        ]:
             continue
 
         cleaned.append(

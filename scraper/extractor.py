@@ -21,18 +21,25 @@ def get_location_data():
     }
 
 
+import os
+import json
+import glob
+
+
 def extract_products():
 
     products = []
 
     location = get_location_data()
 
-    # Search inside all category folders
     files = glob.glob(
         "data/raw/*/products.json"
     )
 
-    print("Files found:", files)
+    print(
+        "Files found:",
+        len(files)
+    )
 
     for file in files:
 
@@ -42,39 +49,80 @@ def extract_products():
                 "r",
                 encoding="utf-8"
             ) as f:
+
                 data = json.load(f)
 
-            # Your scraper saves a list directly
-            # not response.snippets
-            if isinstance(data, list):
-                snippets = data
-            else:
-                snippets = (
-                    data
-                    .get("response", {})
-                    .get("snippets", [])
+            # fallback category
+            folder_category = os.path.basename(
+                os.path.dirname(file)
+            )
+
+            # raw data already stored as list
+            snippets = (
+                data
+                if isinstance(
+                    data,
+                    list
                 )
+                else (
+                    data
+                    .get(
+                        "response",
+                        {}
+                    )
+                    .get(
+                        "snippets",
+                        []
+                    )
+                )
+            )
 
             for item in snippets:
 
-                # Handle both formats
-                product = (
-                    item.get("data", {})
-                    if isinstance(item, dict)
-                    else item
-                )
-
-                if not product.get(
-                    "product_id"
+                if not isinstance(
+                    item,
+                    dict
                 ):
                     continue
 
-                products.append({
+                # --------------------
+                # HANDLE BOTH FORMATS
+                # --------------------
+
+                # flattened product
+                if item.get(
+                    "product_id"
+                ):
+
+                    product = item
+
+                # raw blinkit snippet
+                else:
+
+                    product = item.get(
+                        "data",
+                        {}
+                    )
+
+                product_id = product.get(
+                    "product_id"
+                )
+
+                if not product_id:
+                    continue
+
+                # category fallback
+                category = (
+                    product.get(
+                        "category"
+                    )
+                    or folder_category
+                )
+
+                extracted_product = {
 
                     "product_id":
-                        product.get(
-                            "product_id"
-                        ),
+                        product_id,
 
                     "merchant_id":
                         product.get(
@@ -82,24 +130,30 @@ def extract_products():
                         ),
 
                     "category":
-                        product.get(
-                          "category"
-                        ),
-                        
+                        category,
+
                     "parent_category":
-                       product.get(
-                         "parent_category"
+                        product.get(
+                            "parent_category"
                         ),
-       
+
+                    "ptype":
+                        product.get(
+                            "ptype"
+                        ),
 
                     "name":
                         (
                             product.get(
                                 "name",
                                 {}
-                            ).get("text")
+                            ).get(
+                                "text"
+                            )
                             if isinstance(
-                                product.get("name"),
+                                product.get(
+                                    "name"
+                                ),
                                 dict
                             )
                             else product.get(
@@ -112,27 +166,43 @@ def extract_products():
                             product.get(
                                 "brand_name",
                                 {}
-                            ).get("text")
+                            ).get(
+                                "text"
+                            )
                             if isinstance(
                                 product.get(
                                     "brand_name"
                                 ),
                                 dict
                             )
-                            else product.get(
-                                "brand_name"
+                            else (
+                                product.get(
+                                    "brand_name"
+                                )
+                                or product.get(
+                                    "brand"
+                                )
                             )
                         ),
 
                     "price":
-                        str(
-                            product.get(
-                                "normal_price",
+                        float(
+                            str(
+                                product.get(
+                                    "price",
+                                    product.get(
+                                        "normal_price",
+                                        ""
+                                    )
+                                )
+                            )
+                            .replace(
+                                "₹",
                                 ""
                             )
-                        )
-                        .replace("₹", "")
-                        .strip(),
+                            .strip()
+                            or 0
+                        ),
 
                     "inventory":
                         product.get(
@@ -142,24 +212,32 @@ def extract_products():
 
                     "rating":
                         (
-                            product.get(
-                                "rating",
-                                {}
+                            float(
+                                product.get(
+                                    "rating",
+                                    0
+                                ) or 0
                             )
-                            .get(
-                                "bar",
-                                {}
-                            )
-                            .get(
-                                "value"
-                            )
-                            if isinstance(
+                            if not isinstance(
                                 product.get(
                                     "rating"
                                 ),
                                 dict
                             )
-                            else None
+                            else float(
+                                product.get(
+                                    "rating",
+                                    {}
+                                )
+                                .get(
+                                    "bar",
+                                    {}
+                                )
+                                .get(
+                                    "value",
+                                    0
+                                ) or 0
+                            )
                         ),
 
                     "image_url":
@@ -182,9 +260,18 @@ def extract_products():
                         ),
 
                     "in_stock":
-                        not product.get(
-                            "is_sold_out",
-                            False
+                        (
+                            product.get(
+                                "in_stock"
+                            )
+                            if (
+                                "in_stock"
+                                in product
+                            )
+                            else not product.get(
+                                "is_sold_out",
+                                False
+                            )
                         ),
 
                     "city":
@@ -201,17 +288,27 @@ def extract_products():
                         location[
                             "longitude"
                         ]
-                })
+                }
+
+                products.append(
+                    extracted_product
+                )
 
         except Exception as e:
+
             print(
-                f"Error reading {file}: {e}"
+                f"Error reading "
+                f"{file}: {e}"
             )
 
-    # Remove duplicates
+    # --------------------
+    # REMOVE DUPLICATES
+    # --------------------
+
     unique = {}
 
     for p in products:
+
         unique[
             p["product_id"]
         ] = p
@@ -220,7 +317,6 @@ def extract_products():
         unique.values()
     )
 
-    # Save extracted data
     os.makedirs(
         "data/extracted",
         exist_ok=True

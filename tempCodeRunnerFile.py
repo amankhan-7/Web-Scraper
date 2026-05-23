@@ -1,1 +1,0 @@
-await page.goto("https://blinkit.com", wait_until="networkidle")

@@ -149,163 +149,98 @@
         "deeplink": "grofers://collection-products?collection_uuid=228d4b03-8445-4920-a626-345266ab616a",
         "collection_uuid": "228d4b03-8445-4920-a626-345266ab616a"
       }
-    ]
-  },
-  {
-    "url": "https://blinkit.com/feed/?template_version=9",
-    "widgets_count": 9,
-    "widgets": [
+    ],
+    "categories": [
       {
-        "type": "banner",
-        "image": "https://cdn.grofers.com/layout-engine/2026-01/Frame-1437256605-2-2.jpg",
-        "deeplink": "grofers://collection-products?collection_uuid=736e6fc2-8c33-4c35-9821-d325509aa0e5"
+        "category": "rolling-paper",
+        "display_name": "Rolling Paper",
+        "l0_cat": "229",
+        "l1_cat": "1982",
+        "url": "https://blinkit.com/cn/rolling-paper/cid/229/1982"
       },
       {
-        "type": "category_grid",
-        "items": [
-          {
-            "title": "1 - Paan Corner",
-            "image": "https://cdn.grofers.com/layout-engine/2022-12/paan-corner_web.png",
-            "deeplink": "grofers://listing?l0_cat=229&l1_cat=1982"
-          },
-          {
-            "title": "2 - Dairy, Bread & Eggs",
-            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-2_10.png",
-            "deeplink": "grofers://listing?l0_cat=14&l1_cat=922"
-          },
-          {
-            "title": "3 - Fruits & Vegetables",
-            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-3_9.png",
-            "deeplink": "grofers://listing?l0_cat=1487&l1_cat=1489"
-          },
-          {
-            "title": "4 - Cold Drinks & Juices ",
-            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-4_9.png",
-            "deeplink": "grofers://listing?l0_cat=332&l1_cat=1102"
-          },
-          {
-            "title": "5 - Snacks & Munchies ",
-            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-5_4.png",
-            "deeplink": "grofers://listing?l0_cat=1237&l1_cat=940"
-          },
-          {
-            "title": "6 - Breakfast & Instant Food",
-            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-6_5.png",
-            "deeplink": "grofers://listing?l0_cat=15&l1_cat=954"
-          },
-          {
-            "title": "7 - Sweet Tooth",
-            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-7_3.png",
-            "deeplink": "grofers://listing?l0_cat=9&l1_cat=944"
-          },
-          {
-            "title": "8 - Bakery & Biscuits",
-            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-8_4.png",
-            "deeplink": "grofers://listing?l0_cat=888&l1_cat=28"
-          },
-          {
-            "title": "9 - Tea, Coffee & Health Drink ",
-            "image": "https://cdn.grofers.com/layout-engine/2025-11/Slice-7-1_0.png",
-            "deeplink": "grofers://listing?l0_cat=12&l1_cat=957"
-          },
-          {
-            "title": "10 - Atta, Rice & Dal",
-            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-10.png",
-            "deeplink": "grofers://listing?l0_cat=16&l1_cat=1165"
-          },
-          {
-            "title": "11 - Masala, Oil & More ",
-            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-11.png",
-            "deeplink": "grofers://listing?l0_cat=1557&l1_cat=50"
-          },
-          {
-            "title": "12 - Sauces & Spreads",
-            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-12.png",
-            "deeplink": "grofers://listing?l0_cat=972&l1_cat=1131"
-          },
-          {
-            "title": "13 - Chicken, Meat & Fish ",
-            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-13.png",
-            "deeplink": "grofers://listing?l0_cat=4&l1_cat=1362"
-          },
-          {
-            "title": "14 - Organic & Healthy Living",
-            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-14.png",
-            "deeplink": "grofers://listing?l0_cat=175&l1_cat=801"
-          },
-          {
-            "title": "15 - Baby Care",
-            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-15.png",
-            "deeplink": "grofers://listing?l0_cat=7&l1_cat=1000"
-          },
-          {
-            "title": "16 - Pharma & Wellness",
-            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-16.png",
-            "deeplink": "grofers://listing?l0_cat=287&l1_cat=1826"
-          },
-          {
-            "title": "17 - Clening Essentials",
-            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-17.png",
-            "deeplink": "grofers://listing?l0_cat=18&l1_cat=986"
-          },
-          {
-            "title": "18 - Home & Office ",
-            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-18.png",
-            "deeplink": "grofers://listing?l0_cat=1379&l1_cat=1075"
-          },
-          {
-            "title": "19 - Personal Care",
-            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-19.png",
-            "deeplink": "grofers://listing?l0_cat=163&l1_cat=696"
-          },
-          {
-            "title": "20 - Pet Care",
-            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-20.png",
-            "deeplink": "grofers://listing?l0_cat=5&l1_cat=133"
-          }
-        ]
+        "category": "paan",
+        "display_name": "Paan",
+        "l0_cat": "229",
+        "l1_cat": "2517",
+        "url": "https://blinkit.com/cn/paan/cid/229/2517"
       },
       {
-        "type": "product_collection",
-        "title": "Dairy, Bread & Eggs",
-        "deeplink": "grofers://collection-products?collection_uuid=b33208fc-433f-4219-843e-b7163f242094",
-        "collection_uuid": "b33208fc-433f-4219-843e-b7163f242094"
+        "category": "jerky",
+        "display_name": "Jerky",
+        "l0_cat": "1237",
+        "l1_cat": "940",
+        "url": "https://blinkit.com/cn/jerky/cid/1237/940"
       },
       {
-        "type": "product_collection",
-        "title": "Rolling paper & tobacco",
-        "deeplink": "grofers://collection-products?collection_uuid=38d77960-3850-412d-9e3a-4b8c08f8b64f",
-        "collection_uuid": "38d77960-3850-412d-9e3a-4b8c08f8b64f"
+        "category": "popcorn",
+        "display_name": "Popcorn",
+        "l0_cat": "1237",
+        "l1_cat": "156",
+        "url": "https://blinkit.com/cn/popcorn/cid/1237/156"
       },
       {
-        "type": "product_collection",
-        "title": "Snacks & Munchies",
-        "deeplink": "grofers://collection-products?collection_uuid=264b75b3-e587-4d6a-9aca-e3773d71b865",
-        "collection_uuid": "264b75b3-e587-4d6a-9aca-e3773d71b865"
+        "category": "khakhra",
+        "display_name": "Khakhra",
+        "l0_cat": "1237",
+        "l1_cat": "29",
+        "url": "https://blinkit.com/cn/khakhra/cid/1237/29"
       },
       {
-        "type": "product_collection",
-        "title": "Hookah",
-        "deeplink": "grofers://collection-products?collection_uuid=7feddbca-800a-48ef-86b1-ef88f15e87a9",
-        "collection_uuid": "7feddbca-800a-48ef-86b1-ef88f15e87a9"
+        "category": "crackers",
+        "display_name": "Crackers",
+        "l0_cat": "888",
+        "l1_cat": "1959",
+        "url": "https://blinkit.com/cn/crackers/cid/888/1959"
       },
       {
-        "type": "product_collection",
-        "title": "Mouth fresheners",
-        "deeplink": "grofers://collection-products?collection_uuid=25440383-3328-4db6-81c4-0beb533a4d0b",
-        "collection_uuid": "25440383-3328-4db6-81c4-0beb533a4d0b"
+        "category": "hookah",
+        "display_name": "Hookah",
+        "l0_cat": "229",
+        "l1_cat": "173",
+        "url": "https://blinkit.com/cn/hookah/cid/229/173"
       },
       {
-        "type": "product_collection",
-        "title": "Cold Drinks & Juices",
-        "deeplink": "grofers://collection-products?collection_uuid=a1239437-6d7f-4050-b76c-ec94f7f273c1",
-        "collection_uuid": "a1239437-6d7f-4050-b76c-ec94f7f273c1"
+        "category": "imli-candy",
+        "display_name": "Imli Candy",
+        "l0_cat": "9",
+        "l1_cat": "1933",
+        "url": "https://blinkit.com/cn/imli-candy/cid/9/1933"
       },
       {
-        "type": "product_collection",
-        "title": "Candies & Gums",
-        "deeplink": "grofers://collection-products?collection_uuid=228d4b03-8445-4920-a626-345266ab616a",
-        "collection_uuid": "228d4b03-8445-4920-a626-345266ab616a"
+        "category": "fruit-pulp",
+        "display_name": "Fruit Pulp",
+        "l0_cat": "332",
+        "l1_cat": "955",
+        "url": "https://blinkit.com/cn/fruit-pulp/cid/332/955"
+      },
+      {
+        "category": "masala-soda",
+        "display_name": "Masala Soda",
+        "l0_cat": "332",
+        "l1_cat": "1102",
+        "url": "https://blinkit.com/cn/masala-soda/cid/332/1102"
+      },
+      {
+        "category": "kombucha",
+        "display_name": "Kombucha",
+        "l0_cat": "12",
+        "l1_cat": "1953",
+        "url": "https://blinkit.com/cn/kombucha/cid/12/1953"
+      },
+      {
+        "category": "electrolyte",
+        "display_name": "Electrolyte",
+        "l0_cat": "287",
+        "l1_cat": "8713",
+        "url": "https://blinkit.com/cn/electrolyte/cid/287/8713"
+      },
+      {
+        "category": "fruit-bar",
+        "display_name": "Fruit Bar",
+        "l0_cat": "9",
+        "l1_cat": "1930",
+        "url": "https://blinkit.com/cn/fruit-bar/cid/9/1930"
       }
     ]
   },
@@ -464,6 +399,448 @@
         "title": "Candies & Gums",
         "deeplink": "grofers://collection-products?collection_uuid=228d4b03-8445-4920-a626-345266ab616a",
         "collection_uuid": "228d4b03-8445-4920-a626-345266ab616a"
+      }
+    ],
+    "categories": [
+      {
+        "category": "full-cream-milk",
+        "display_name": "Full Cream Milk",
+        "l0_cat": "14",
+        "l1_cat": "922",
+        "url": "https://blinkit.com/cn/full-cream-milk/cid/14/922"
+      },
+      {
+        "category": "pouch-curd",
+        "display_name": "Pouch Curd",
+        "l0_cat": "14",
+        "l1_cat": "123",
+        "url": "https://blinkit.com/cn/pouch-curd/cid/14/123"
+      },
+      {
+        "category": "white-bread",
+        "display_name": "White Bread",
+        "l0_cat": "14",
+        "l1_cat": "953",
+        "url": "https://blinkit.com/cn/white-bread/cid/14/953"
+      },
+      {
+        "category": "salted-butter",
+        "display_name": "Salted Butter",
+        "l0_cat": "14",
+        "l1_cat": "952",
+        "url": "https://blinkit.com/cn/salted-butter/cid/14/952"
+      },
+      {
+        "category": "diced-cheese",
+        "display_name": "Diced Cheese",
+        "l0_cat": "14",
+        "l1_cat": "2253",
+        "url": "https://blinkit.com/cn/diced-cheese/cid/14/2253"
+      },
+      {
+        "category": "white-eggs",
+        "display_name": "White Eggs",
+        "l0_cat": "14",
+        "l1_cat": "1200",
+        "url": "https://blinkit.com/cn/white-eggs/cid/14/1200"
+      },
+      {
+        "category": "rolled-cones",
+        "display_name": "Rolled Cones",
+        "l0_cat": "229",
+        "l1_cat": "1982",
+        "url": "https://blinkit.com/cn/rolled-cones/cid/229/1982"
+      },
+      {
+        "category": "potato-chips",
+        "display_name": "Potato Chips",
+        "l0_cat": "1237",
+        "l1_cat": "940",
+        "url": "https://blinkit.com/cn/potato-chips/cid/1237/940"
+      },
+      {
+        "category": "peanuts",
+        "display_name": "Peanuts",
+        "l0_cat": "1237",
+        "l1_cat": "29",
+        "url": "https://blinkit.com/cn/peanuts/cid/1237/29"
+      },
+      {
+        "category": "spread",
+        "display_name": "Spread",
+        "l0_cat": "888",
+        "l1_cat": "105",
+        "url": "https://blinkit.com/cn/spread/cid/888/105"
+      },
+      {
+        "category": "bhujia",
+        "display_name": "Bhujia",
+        "l0_cat": "1237",
+        "l1_cat": "1178",
+        "url": "https://blinkit.com/cn/bhujia/cid/1237/1178"
+      },
+      {
+        "category": "hookah-coal",
+        "display_name": "Hookah Coal",
+        "l0_cat": "229",
+        "l1_cat": "173",
+        "url": "https://blinkit.com/cn/hookah-coal/cid/229/173"
+      },
+      {
+        "category": "elaichi-mouth-freshener",
+        "display_name": "Elaichi Mouth Freshener",
+        "l0_cat": "9",
+        "l1_cat": "1933",
+        "url": "https://blinkit.com/cn/elaichi-mouth-freshener/cid/9/1933"
+      },
+      {
+        "category": "mint-candies",
+        "display_name": "Mint Candies",
+        "l0_cat": "9",
+        "l1_cat": "1930",
+        "url": "https://blinkit.com/cn/mint-candies/cid/9/1930"
+      },
+      {
+        "category": "unsalted-buttermilk",
+        "display_name": "Unsalted Buttermilk",
+        "l0_cat": "12",
+        "l1_cat": "1184",
+        "url": "https://blinkit.com/cn/unsalted-buttermilk/cid/12/1184"
+      },
+      {
+        "category": "diets-and-lights",
+        "display_name": "Diets & Lights",
+        "l0_cat": "332",
+        "l1_cat": "1102",
+        "url": "https://blinkit.com/cn/diets-and-lights/cid/332/1102"
+      },
+      {
+        "category": "packaged-water",
+        "display_name": "Packaged Water",
+        "l0_cat": "332",
+        "l1_cat": "270",
+        "url": "https://blinkit.com/cn/packaged-water/cid/332/270"
+      },
+      {
+        "category": "sharbat",
+        "display_name": "Sharbat",
+        "l0_cat": "332",
+        "l1_cat": "109",
+        "url": "https://blinkit.com/cn/sharbat/cid/332/109"
+      },
+      {
+        "category": "mango-drink",
+        "display_name": "Mango Drink",
+        "l0_cat": "332",
+        "l1_cat": "1108",
+        "url": "https://blinkit.com/cn/mango-drink/cid/332/1108"
+      },
+      {
+        "category": "soda-water",
+        "display_name": "Soda Water",
+        "l0_cat": "332",
+        "l1_cat": "1599",
+        "url": "https://blinkit.com/cn/soda-water/cid/332/1599"
+      }
+    ]
+  },
+  {
+    "url": "https://blinkit.com/feed/?template_version=9",
+    "widgets_count": 9,
+    "widgets": [
+      {
+        "type": "banner",
+        "image": "https://cdn.grofers.com/layout-engine/2026-01/Frame-1437256605-2-2.jpg",
+        "deeplink": "grofers://collection-products?collection_uuid=736e6fc2-8c33-4c35-9821-d325509aa0e5"
+      },
+      {
+        "type": "category_grid",
+        "items": [
+          {
+            "title": "1 - Paan Corner",
+            "image": "https://cdn.grofers.com/layout-engine/2022-12/paan-corner_web.png",
+            "deeplink": "grofers://listing?l0_cat=229&l1_cat=1982"
+          },
+          {
+            "title": "2 - Dairy, Bread & Eggs",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-2_10.png",
+            "deeplink": "grofers://listing?l0_cat=14&l1_cat=922"
+          },
+          {
+            "title": "3 - Fruits & Vegetables",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-3_9.png",
+            "deeplink": "grofers://listing?l0_cat=1487&l1_cat=1489"
+          },
+          {
+            "title": "4 - Cold Drinks & Juices ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-4_9.png",
+            "deeplink": "grofers://listing?l0_cat=332&l1_cat=1102"
+          },
+          {
+            "title": "5 - Snacks & Munchies ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-5_4.png",
+            "deeplink": "grofers://listing?l0_cat=1237&l1_cat=940"
+          },
+          {
+            "title": "6 - Breakfast & Instant Food",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-6_5.png",
+            "deeplink": "grofers://listing?l0_cat=15&l1_cat=954"
+          },
+          {
+            "title": "7 - Sweet Tooth",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-7_3.png",
+            "deeplink": "grofers://listing?l0_cat=9&l1_cat=944"
+          },
+          {
+            "title": "8 - Bakery & Biscuits",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-8_4.png",
+            "deeplink": "grofers://listing?l0_cat=888&l1_cat=28"
+          },
+          {
+            "title": "9 - Tea, Coffee & Health Drink ",
+            "image": "https://cdn.grofers.com/layout-engine/2025-11/Slice-7-1_0.png",
+            "deeplink": "grofers://listing?l0_cat=12&l1_cat=957"
+          },
+          {
+            "title": "10 - Atta, Rice & Dal",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-10.png",
+            "deeplink": "grofers://listing?l0_cat=16&l1_cat=1165"
+          },
+          {
+            "title": "11 - Masala, Oil & More ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-11.png",
+            "deeplink": "grofers://listing?l0_cat=1557&l1_cat=50"
+          },
+          {
+            "title": "12 - Sauces & Spreads",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-12.png",
+            "deeplink": "grofers://listing?l0_cat=972&l1_cat=1131"
+          },
+          {
+            "title": "13 - Chicken, Meat & Fish ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-13.png",
+            "deeplink": "grofers://listing?l0_cat=4&l1_cat=1362"
+          },
+          {
+            "title": "14 - Organic & Healthy Living",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-14.png",
+            "deeplink": "grofers://listing?l0_cat=175&l1_cat=801"
+          },
+          {
+            "title": "15 - Baby Care",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-15.png",
+            "deeplink": "grofers://listing?l0_cat=7&l1_cat=1000"
+          },
+          {
+            "title": "16 - Pharma & Wellness",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-16.png",
+            "deeplink": "grofers://listing?l0_cat=287&l1_cat=1826"
+          },
+          {
+            "title": "17 - Clening Essentials",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-17.png",
+            "deeplink": "grofers://listing?l0_cat=18&l1_cat=986"
+          },
+          {
+            "title": "18 - Home & Office ",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-18.png",
+            "deeplink": "grofers://listing?l0_cat=1379&l1_cat=1075"
+          },
+          {
+            "title": "19 - Personal Care",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-19.png",
+            "deeplink": "grofers://listing?l0_cat=163&l1_cat=696"
+          },
+          {
+            "title": "20 - Pet Care",
+            "image": "https://cdn.grofers.com/layout-engine/2022-11/Slice-20.png",
+            "deeplink": "grofers://listing?l0_cat=5&l1_cat=133"
+          }
+        ]
+      },
+      {
+        "type": "product_collection",
+        "title": "Dairy, Bread & Eggs",
+        "deeplink": "grofers://collection-products?collection_uuid=b33208fc-433f-4219-843e-b7163f242094",
+        "collection_uuid": "b33208fc-433f-4219-843e-b7163f242094"
+      },
+      {
+        "type": "product_collection",
+        "title": "Rolling paper & tobacco",
+        "deeplink": "grofers://collection-products?collection_uuid=38d77960-3850-412d-9e3a-4b8c08f8b64f",
+        "collection_uuid": "38d77960-3850-412d-9e3a-4b8c08f8b64f"
+      },
+      {
+        "type": "product_collection",
+        "title": "Snacks & Munchies",
+        "deeplink": "grofers://collection-products?collection_uuid=264b75b3-e587-4d6a-9aca-e3773d71b865",
+        "collection_uuid": "264b75b3-e587-4d6a-9aca-e3773d71b865"
+      },
+      {
+        "type": "product_collection",
+        "title": "Hookah",
+        "deeplink": "grofers://collection-products?collection_uuid=7feddbca-800a-48ef-86b1-ef88f15e87a9",
+        "collection_uuid": "7feddbca-800a-48ef-86b1-ef88f15e87a9"
+      },
+      {
+        "type": "product_collection",
+        "title": "Mouth fresheners",
+        "deeplink": "grofers://collection-products?collection_uuid=25440383-3328-4db6-81c4-0beb533a4d0b",
+        "collection_uuid": "25440383-3328-4db6-81c4-0beb533a4d0b"
+      },
+      {
+        "type": "product_collection",
+        "title": "Cold Drinks & Juices",
+        "deeplink": "grofers://collection-products?collection_uuid=a1239437-6d7f-4050-b76c-ec94f7f273c1",
+        "collection_uuid": "a1239437-6d7f-4050-b76c-ec94f7f273c1"
+      },
+      {
+        "type": "product_collection",
+        "title": "Candies & Gums",
+        "deeplink": "grofers://collection-products?collection_uuid=228d4b03-8445-4920-a626-345266ab616a",
+        "collection_uuid": "228d4b03-8445-4920-a626-345266ab616a"
+      }
+    ],
+    "categories": [
+      {
+        "category": "full-cream-milk",
+        "display_name": "Full Cream Milk",
+        "l0_cat": "14",
+        "l1_cat": "922",
+        "url": "https://blinkit.com/cn/full-cream-milk/cid/14/922"
+      },
+      {
+        "category": "pouch-curd",
+        "display_name": "Pouch Curd",
+        "l0_cat": "14",
+        "l1_cat": "123",
+        "url": "https://blinkit.com/cn/pouch-curd/cid/14/123"
+      },
+      {
+        "category": "white-bread",
+        "display_name": "White Bread",
+        "l0_cat": "14",
+        "l1_cat": "953",
+        "url": "https://blinkit.com/cn/white-bread/cid/14/953"
+      },
+      {
+        "category": "salted-butter",
+        "display_name": "Salted Butter",
+        "l0_cat": "14",
+        "l1_cat": "952",
+        "url": "https://blinkit.com/cn/salted-butter/cid/14/952"
+      },
+      {
+        "category": "diced-cheese",
+        "display_name": "Diced Cheese",
+        "l0_cat": "14",
+        "l1_cat": "2253",
+        "url": "https://blinkit.com/cn/diced-cheese/cid/14/2253"
+      },
+      {
+        "category": "white-eggs",
+        "display_name": "White Eggs",
+        "l0_cat": "14",
+        "l1_cat": "1200",
+        "url": "https://blinkit.com/cn/white-eggs/cid/14/1200"
+      },
+      {
+        "category": "rolled-cones",
+        "display_name": "Rolled Cones",
+        "l0_cat": "229",
+        "l1_cat": "1982",
+        "url": "https://blinkit.com/cn/rolled-cones/cid/229/1982"
+      },
+      {
+        "category": "potato-chips",
+        "display_name": "Potato Chips",
+        "l0_cat": "1237",
+        "l1_cat": "940",
+        "url": "https://blinkit.com/cn/potato-chips/cid/1237/940"
+      },
+      {
+        "category": "peanuts",
+        "display_name": "Peanuts",
+        "l0_cat": "1237",
+        "l1_cat": "29",
+        "url": "https://blinkit.com/cn/peanuts/cid/1237/29"
+      },
+      {
+        "category": "spread",
+        "display_name": "Spread",
+        "l0_cat": "888",
+        "l1_cat": "105",
+        "url": "https://blinkit.com/cn/spread/cid/888/105"
+      },
+      {
+        "category": "bhujia",
+        "display_name": "Bhujia",
+        "l0_cat": "1237",
+        "l1_cat": "1178",
+        "url": "https://blinkit.com/cn/bhujia/cid/1237/1178"
+      },
+      {
+        "category": "hookah-coal",
+        "display_name": "Hookah Coal",
+        "l0_cat": "229",
+        "l1_cat": "173",
+        "url": "https://blinkit.com/cn/hookah-coal/cid/229/173"
+      },
+      {
+        "category": "elaichi-mouth-freshener",
+        "display_name": "Elaichi Mouth Freshener",
+        "l0_cat": "9",
+        "l1_cat": "1933",
+        "url": "https://blinkit.com/cn/elaichi-mouth-freshener/cid/9/1933"
+      },
+      {
+        "category": "mint-candies",
+        "display_name": "Mint Candies",
+        "l0_cat": "9",
+        "l1_cat": "1930",
+        "url": "https://blinkit.com/cn/mint-candies/cid/9/1930"
+      },
+      {
+        "category": "unsalted-buttermilk",
+        "display_name": "Unsalted Buttermilk",
+        "l0_cat": "12",
+        "l1_cat": "1184",
+        "url": "https://blinkit.com/cn/unsalted-buttermilk/cid/12/1184"
+      },
+      {
+        "category": "diets-and-lights",
+        "display_name": "Diets & Lights",
+        "l0_cat": "332",
+        "l1_cat": "1102",
+        "url": "https://blinkit.com/cn/diets-and-lights/cid/332/1102"
+      },
+      {
+        "category": "packaged-water",
+        "display_name": "Packaged Water",
+        "l0_cat": "332",
+        "l1_cat": "270",
+        "url": "https://blinkit.com/cn/packaged-water/cid/332/270"
+      },
+      {
+        "category": "sharbat",
+        "display_name": "Sharbat",
+        "l0_cat": "332",
+        "l1_cat": "109",
+        "url": "https://blinkit.com/cn/sharbat/cid/332/109"
+      },
+      {
+        "category": "mango-drink",
+        "display_name": "Mango Drink",
+        "l0_cat": "332",
+        "l1_cat": "1108",
+        "url": "https://blinkit.com/cn/mango-drink/cid/332/1108"
+      },
+      {
+        "category": "soda-water",
+        "display_name": "Soda Water",
+        "l0_cat": "332",
+        "l1_cat": "1599",
+        "url": "https://blinkit.com/cn/soda-water/cid/332/1599"
       }
     ]
   }

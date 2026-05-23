@@ -3,7 +3,7 @@ import asyncio
 from pathlib import Path
 from playwright.async_api import async_playwright
 
-from clean_utils import clean
+from layout.clean_utils import clean
 
 OUTPUT_FILE = Path("data/feed.json")
 
