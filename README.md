@@ -1,317 +1,308 @@
-# 🛒 Blinkit Product Scraper
+# Blinkit Product Scraper
 
-A Python-based web scraping project that extracts **Blinkit product data** for a specific **latitude and longitude**, cleans and structures the data, and stores it in a **PostgreSQL/Neon database** for further analytics.
+A Playwright-based Blinkit scraper that extracts category information, scrapes product listings, cleans and normalizes product data, and stores the results in a Neon PostgreSQL database.
 
-The long-term goal of this project is to enable **location-based product intelligence**, including:
+## Features
 
-- 📈 Product trend analysis by location
-- 📦 Inventory analysis
-- 🗺️ Geo-based demand insights
-- 🏪 Regional product availability tracking
-- 💰 Pricing analysis across locations
-
----
-
-# 🚀 Features
-
-- Scrapes **Blinkit product catalog**
-- Fetches products based on **latitude & longitude**
-- Extracts product metadata from raw feed
-- Cleans and standardizes product data
-- Stores data in **Neon PostgreSQL**
-- Creates and maps **categories table**
-- Maintains **category foreign key relationships**
-- Saves intermediate JSON files for debugging and processing
+* Extracts Blinkit feed data
+* Parses and resolves category URLs
+* Scrapes products from category pages
+* Handles dynamic loading and scrolling
+* Removes duplicate products
+* Normalizes product attributes
+* Stores data in Neon PostgreSQL
+* Category-to-product mapping support
+* Location-aware scraping (optional)
+* JSON export for raw, extracted, and cleaned datasets
 
 ---
 
-# 📂 Project Structure
+## Project Structure
 
-```txt
-WebScraping/
-├── config/
-│   └── settings.py
-
+```text
+project/
+│
 ├── data/
 │   ├── raw/
+│   │   └── <category>/
+│   │       └── products.json
+│   │
 │   ├── extracted/
-│   └── cleaned/
-
-├── db/
-│   ├── neon.py
-│   ├── schema.sql
-│   └── supabase.py
-
-├── layout/
-│   ├── clean_utils.py
-│   ├── feed_extractor.py
-│   ├── fill_categories.py
-│   └── fill_categories_slug.py
-
+│   │   └── extracted_products.json
+│   │
+│   ├── cleaned/
+│   │   └── cleaned_products.json
+│   │
+│   ├── feed.json
+│   └── clean_feed.json
+│
 ├── scraper/
 │   ├── categories.py
-│   ├── cleaner.py
 │   ├── extractor.py
-│   ├── products.py
-│   └── visibility.py
-
-├── utils/
-│   ├── headers.py
-│   └── loggers.py
-
-├── insertdb.py
+│   ├── visibility.py
+│   ├── cleaner.py
+│   └── database.py
+│
 ├── main.py
 ├── requirements.txt
-└── .env
+└── README.md
 ```
 
 ---
 
-# ⚙️ Data Pipeline
+## Data Pipeline
 
-The scraper follows this workflow:
+### 1. Feed Extraction
 
-```txt
-Feed Extraction
-        ↓
-Category Scraping
-        ↓
-Raw Product Collection
-        ↓
-Product Extraction
-        ↓
-Data Cleaning
-        ↓
-Category Table Creation
-        ↓
-Category FK Mapping
-        ↓
-Store in Neon/PostgreSQL
+The scraper captures Blinkit feed requests:
+
+```text
+https://blinkit.com/feed/?template_version=9
+```
+
+The response is saved as:
+
+```text
+data/feed.json
+data/clean_feed.json
 ```
 
 ---
 
-# 🗄️ Database Design
+### 2. Category Resolution
 
-## Categories Table
+Categories are extracted from the feed and converted into valid Blinkit category URLs.
 
-```sql
-CREATE TABLE categories (
-    id BIGSERIAL PRIMARY KEY,
+Example:
 
-    name TEXT NOT NULL,
-    slug TEXT UNIQUE NOT NULL,
-
-    url TEXT,
-
-    created_at TIMESTAMP DEFAULT NOW()
-);
+```text
+https://blinkit.com/cn/full-cream-milk/cid/14/922
 ```
 
-## Blinkit Products Table
-
-```sql
-CREATE TABLE blinkit_products (
-    id BIGSERIAL PRIMARY KEY,
-
-    product_id BIGINT UNIQUE NOT NULL,
-    merchant_id BIGINT,
-
-    category_id BIGINT
-    REFERENCES categories(id),
-
-    name TEXT NOT NULL,
-    brand TEXT,
-
-    price NUMERIC(10,2),
-    inventory INT,
-
-    rating FLOAT,
-
-    image_url TEXT,
-
-    in_stock BOOLEAN DEFAULT TRUE,
-
-    city TEXT,
-    latitude DOUBLE PRECISION,
-    longitude DOUBLE PRECISION,
-
-    scraped_at TIMESTAMP DEFAULT NOW(),
-
-    created_at TIMESTAMP DEFAULT NOW(),
-    updated_at TIMESTAMP DEFAULT NOW()
-);
-```
-
----
-
-# 📦 Example Extracted Product
+Stored metadata:
 
 ```json
 {
-  "product_id": 364457,
-  "merchant_id": 31719,
-  "category": "sharbat",
   "parent_category": "cn",
-  "ptype": "",
-  "name": "Rasna Fruit Fun Nagpur Orange Drink Mix (32 Glasses)",
-  "brand": "Rasna Fruit Fun",
-  "price": 50.0,
-  "inventory": 12,
-  "rating": 4.329999923706055,
-  "image_url": "https://cdn.grofers.com/product.png",
-  "in_stock": true,
-  "city": "Agra",
-  "latitude": 27.1606595,
-  "longitude": 77.9874933
+  "category": "full-cream-milk",
+  "l0_cat": "14",
+  "l1_cat": "922",
+  "category_path": "14/922"
 }
 ```
 
 ---
 
-# 🔧 Environment Variables
+### 3. Product Scraping
 
-Create a `.env` file in the root directory:
+For each category:
 
-```env
-DATABASE_URL=your_neon_database_url
+* Opens category page
+* Captures API responses
+* Scrolls through listings
+* Collects products
+* Removes duplicates
+* Saves raw category data
 
-LATITUDE=27.1606595
-LONGITUDE=77.9874933
+Output:
 
-CITY=Agra
+```text
+data/raw/<category>/products.json
 ```
 
 ---
 
-# 📥 Installation
+### 4. Product Extraction
 
-Clone the repository:
+The extractor:
 
-```bash
-git clone <your-repo-url>
-cd WebScraping
+* Reads all category files
+* Supports multiple Blinkit response formats
+* Normalizes product fields
+* Removes duplicates globally
+
+Extracted fields:
+
+```json
+{
+  "product_id": 482995,
+  "merchant_id": 31719,
+  "category": "chewing-gum",
+  "parent_category": "cn",
+  "name": "Orbit Spearmint Flavour Sugar Free Chewing Gum",
+  "brand": "Orbit",
+  "price": 15.0,
+  "inventory": 8,
+  "rating": 4.69,
+  "image_url": "...",
+  "in_stock": true,
+  "city": null,
+  "state": null,
+  "latitude": 27.1606595,
+  "longitude": 77.9874933
+}
 ```
 
-Create virtual environment:
+Output:
+
+```text
+data/extracted/extracted_products.json
+```
+
+---
+
+### 5. Data Cleaning
+
+The cleaning stage:
+
+* Removes invalid products
+* Normalizes data types
+* Handles missing values
+* Standardizes fields
+
+Output:
+
+```text
+data/cleaned/cleaned_products.json
+```
+
+---
+
+### 6. Database Storage
+
+The cleaned dataset is inserted into Neon PostgreSQL.
+
+Tables:
+
+### categories
+
+```sql
+id
+category
+parent_category
+```
+
+### blinkit_products
+
+```sql
+product_id
+merchant_id
+name
+brand
+price
+inventory
+rating
+image_url
+category_id
+latitude
+longitude
+```
+
+---
+
+## Installation
+
+### Clone Repository
+
+```bash
+git clone <repository-url>
+cd blinkit-scraper
+```
+
+### Create Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate environment:
-
-### Windows
+Activate:
 
 ```bash
 venv\Scripts\activate
 ```
 
-### Mac/Linux
-
-```bash
-source venv/bin/activate
-```
-
-Install dependencies:
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
+### Install Playwright
+
+```bash
+playwright install
+```
+
 ---
 
-# ▶️ Running the Project
+## Environment Variables
 
-Run the scraper:
+Create a `.env` file:
+
+```env
+LATITUDE=27.1606595
+LONGITUDE=77.9874933
+
+NEON_HOST=your_host
+NEON_DATABASE=your_database
+NEON_USER=your_user
+NEON_PASSWORD=your_password
+```
+
+---
+
+## Run
 
 ```bash
 python main.py
 ```
 
-The pipeline automatically:
-
-1. Fetches Blinkit feed
-2. Scrapes categories
-3. Extracts raw products
-4. Cleans product data
-5. Creates category records
-6. Maps `category_id`
-7. Inserts products into PostgreSQL
-
 ---
 
-# 📁 Data Storage
+## Example Output
 
-Temporary scraped data is stored inside:
-
-```txt
-data/
+```text
+Loaded 18 categories
+Saved extracted data (529 products)
+Saved cleaned data (529 products)
+Saved 529 products to Neon DB
 ```
 
-This folder is ignored from Git to avoid pushing scraped JSON files.
+---
+
+## Current Improvements
+
+### Completed
+
+* Feed interception
+* Category extraction
+* Product scraping
+* Deduplication
+* Cleaning pipeline
+* Neon integration
+
+### Planned
+
+* Better pagination detection
+* Improved price extraction
+* Visibility endpoint fallback handling
+* Incremental scraping
+* Product change tracking
+* Historical price monitoring
 
 ---
 
-# 🔮 Future Scope
+## Tech Stack
 
-This project can be extended to support:
-
-### 1. Product Trend Analysis
-Track how products perform across locations over time.
-
-### 2. Inventory Intelligence
-Identify products with:
-
-- Frequent stockouts
-- High availability
-- Seasonal demand
-
-### 3. Geo-Based Analytics
-Compare:
-
-- Product pricing
-- Availability
-- Inventory levels
-
-Across different latitudes and longitudes.
-
-### 4. Demand Forecasting
-Use historical data to predict:
-
-- High-demand products
-- Inventory shortages
-- Region-specific preferences
-
-### 5. Real-Time Monitoring
-Schedule scraping jobs for:
-
-- Hourly tracking
-- Daily trend analysis
-- Live inventory monitoring
+* Python 3.12
+* Playwright
+* Requests
+* PostgreSQL
+* Neon Database
+* JSON Processing
 
 ---
 
-# 🛠️ Tech Stack
+## Disclaimer
 
-- **Python**
-- **PostgreSQL**
-- **Neon DB**
-- **psycopg2**
-- **JSON Processing**
-- **REST APIs**
-- **Environment Variables (.env)**
-
----
-
-# 📜 License
-
-This project is intended for **educational and research purposes**.
-
-Please ensure compliance with Blinkit's Terms of Service before using at scale.
-
----
-
-## 👨‍💻 Author
-
-Built with Python for location-based product intelligence and analytics.
+This project is intended for educational and research purposes only. Respect Blinkit's Terms of Service and applicable laws when scraping data.
