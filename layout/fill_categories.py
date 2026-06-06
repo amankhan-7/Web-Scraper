@@ -2,8 +2,8 @@ import os
 import psycopg2
 from dotenv import load_dotenv
 
-
 load_dotenv()
+# to fillt the categories id to the blinlkit_products table
 
 
 def format_name(slug: str) -> str:
@@ -12,20 +12,12 @@ def format_name(slug: str) -> str:
     ->
     Full Cream Milk
     """
-    return (
-        slug
-        .replace("-", " ")
-        .title()
-    )
+    return slug.replace("-", " ").title()
 
 
 def main():
 
-    connection = psycopg2.connect(
-        os.getenv(
-            "DATABASE_URL"
-        )
-    )
+    connection = psycopg2.connect(os.getenv("DATABASE_URL"))
 
     cursor = connection.cursor()
 
@@ -33,46 +25,22 @@ def main():
 
     categories = []
 
-    for folder in os.listdir(
-        raw_path
-    ):
+    for folder in os.listdir(raw_path):
 
-        folder_path = os.path.join(
-            raw_path,
-            folder
-        )
+        folder_path = os.path.join(raw_path, folder)
 
-        if not os.path.isdir(
-            folder_path
-        ):
+        if not os.path.isdir(folder_path):
             continue
 
-        slug = (
-            folder
-            .strip()
-            .lower()
-        )
+        slug = folder.strip().lower()
 
-        name = format_name(
-            slug
-        )
+        name = format_name(slug)
 
-        url = (
-            "https://blinkit.com/"
-            f"cn/{slug}"
-        )
+        url = "https://blinkit.com/" f"cn/{slug}"
 
-        categories.append((
-            name,
-            slug,
-            url
-        ))
+        categories.append((name, slug, url))
 
-    print(
-        f"Found "
-        f"{len(categories)} "
-        f"categories"
-    )
+    print(f"Found " f"{len(categories)} " f"categories")
 
     query = """
     INSERT INTO categories
@@ -90,20 +58,14 @@ def main():
     DO NOTHING
     """
 
-    cursor.executemany(
-        query,
-        categories
-    )
+    cursor.executemany(query, categories)
 
     connection.commit()
 
     cursor.close()
     connection.close()
 
-    print(
-        "Categories "
-        "saved to DB"
-    )
+    print("Categories " "saved to DB")
 
 
 if __name__ == "__main__":

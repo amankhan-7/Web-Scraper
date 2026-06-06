@@ -1,118 +1,65 @@
 import json
+import os
+
 import psycopg2
 from psycopg2.extras import execute_values
 from dotenv import load_dotenv
+
 load_dotenv()
-import os
 
 
 def insert_products():
 
-    with open(
-        "data/cleaned/cleaned_products.json",
-        "r",
-        encoding="utf-8"
-    ) as f:
+    file_path = "data/cleaned/cleaned_products.json"
+
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"{file_path} not found")
+
+    if os.path.getsize(file_path) == 0:
+        raise ValueError(f"{file_path} is empty")
+
+    with open(file_path, "r", encoding="utf-8") as f:
 
         products = json.load(f)
-        
-    
-    connection = psycopg2.connect(
-        os.getenv(
-            "DATABASE_URL"
-        )
-    )
+
+    connection = psycopg2.connect(os.getenv("DATABASE_URL"))
 
     cur = connection.cursor()
 
-    # category slug -> id
-    cur.execute(
-        """
+    cur.execute("""
         SELECT
             id,
             slug
         FROM categories
-        """
-    )
+        """)
 
-    category_map = {
-        slug: cat_id
-        for cat_id, slug
-        in cur.fetchall()
-    }
+    category_map = {slug: cat_id for cat_id, slug in cur.fetchall()}
 
     rows = []
 
     for product in products:
 
-        category_slug = (
-            product.get(
-                "category",
-                ""
+        category_slug = product.get("category", "").strip().lower()
+
+        category_id = category_map.get(category_slug)
+
+        rows.append(
+            (
+                product.get("product_id"),
+                product.get("merchant_id"),
+                category_id,
+                product.get("name"),
+                product.get("brand"),
+                product.get("price"),
+                product.get("inventory"),
+                product.get("rating"),
+                product.get("image_url"),
+                product.get("in_stock", True),
+                product.get("city"),
+                product.get("latitude"),
+                product.get("longitude"),
             )
-            .strip()
-            .lower()
         )
-
-        category_id = (
-            category_map.get(
-                category_slug
-            )
-        )
-
-        rows.append((
-
-            product.get(
-                "product_id"
-            ),
-
-            product.get(
-                "merchant_id"
-            ),
-
-            category_id,
-
-            product.get(
-                "name"
-            ),
-
-            product.get(
-                "brand"
-            ),
-
-            product.get(
-                "price"
-            ),
-
-            product.get(
-                "inventory"
-            ),
-
-            product.get(
-                "rating"
-            ),
-
-            product.get(
-                "image_url"
-            ),
-
-            product.get(
-                "in_stock",
-                True
-            ),
-
-            product.get(
-                "city"
-            ),
-
-            product.get(
-                "latitude"
-            ),
-
-            product.get(
-                "longitude"
-            )
-        ))
 
     execute_values(
         cur,
@@ -186,18 +133,16 @@ def insert_products():
             updated_at =
             NOW()
         """,
-        rows
+        rows,
     )
 
     connection.commit()
 
-    print(
-        f"Inserted "
-        f"{len(rows)} products"
-    )
+    print(f"Inserted " f"{len(rows)} products")
 
-    connection.close()
+    cur.close()
     connection.close()
 
 
-insert_products()
+if __name__ == "__main__":
+    insert_products()

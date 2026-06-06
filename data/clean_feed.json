@@ -173,13 +173,6 @@
         "url": "https://blinkit.com/cn/jerky/cid/1237/940"
       },
       {
-        "category": "popcorn",
-        "display_name": "Popcorn",
-        "l0_cat": "1237",
-        "l1_cat": "156",
-        "url": "https://blinkit.com/cn/popcorn/cid/1237/156"
-      },
-      {
         "category": "khakhra",
         "display_name": "Khakhra",
         "l0_cat": "1237",
@@ -194,6 +187,13 @@
         "url": "https://blinkit.com/cn/crackers/cid/888/1959"
       },
       {
+        "category": "popcorn",
+        "display_name": "Popcorn",
+        "l0_cat": "1237",
+        "l1_cat": "156",
+        "url": "https://blinkit.com/cn/popcorn/cid/1237/156"
+      },
+      {
         "category": "hookah",
         "display_name": "Hookah",
         "l0_cat": "229",
@@ -206,6 +206,13 @@
         "l0_cat": "9",
         "l1_cat": "1933",
         "url": "https://blinkit.com/cn/imli-candy/cid/9/1933"
+      },
+      {
+        "category": "gulkand",
+        "display_name": "Gulkand",
+        "l0_cat": "972",
+        "l1_cat": "974",
+        "url": "https://blinkit.com/cn/gulkand/cid/972/974"
       },
       {
         "category": "fruit-pulp",
@@ -229,18 +236,11 @@
         "url": "https://blinkit.com/cn/kombucha/cid/12/1953"
       },
       {
-        "category": "electrolyte",
-        "display_name": "Electrolyte",
-        "l0_cat": "287",
-        "l1_cat": "8713",
-        "url": "https://blinkit.com/cn/electrolyte/cid/287/8713"
-      },
-      {
-        "category": "fruit-bar",
-        "display_name": "Fruit Bar",
+        "category": "hard-candy",
+        "display_name": "Hard Candy",
         "l0_cat": "9",
         "l1_cat": "1930",
-        "url": "https://blinkit.com/cn/fruit-bar/cid/9/1930"
+        "url": "https://blinkit.com/cn/hard-candy/cid/9/1930"
       }
     ]
   },
@@ -417,18 +417,18 @@
         "url": "https://blinkit.com/cn/pouch-curd/cid/14/123"
       },
       {
-        "category": "white-bread",
-        "display_name": "White Bread",
-        "l0_cat": "14",
-        "l1_cat": "953",
-        "url": "https://blinkit.com/cn/white-bread/cid/14/953"
-      },
-      {
         "category": "salted-butter",
         "display_name": "Salted Butter",
         "l0_cat": "14",
         "l1_cat": "952",
         "url": "https://blinkit.com/cn/salted-butter/cid/14/952"
+      },
+      {
+        "category": "white-bread",
+        "display_name": "White Bread",
+        "l0_cat": "14",
+        "l1_cat": "953",
+        "url": "https://blinkit.com/cn/white-bread/cid/14/953"
       },
       {
         "category": "diced-cheese",
@@ -494,11 +494,11 @@
         "url": "https://blinkit.com/cn/elaichi-mouth-freshener/cid/9/1933"
       },
       {
-        "category": "mint-candies",
-        "display_name": "Mint Candies",
+        "category": "chewing-gum",
+        "display_name": "Chewing Gum",
         "l0_cat": "9",
         "l1_cat": "1930",
-        "url": "https://blinkit.com/cn/mint-candies/cid/9/1930"
+        "url": "https://blinkit.com/cn/chewing-gum/cid/9/1930"
       },
       {
         "category": "unsalted-buttermilk",
@@ -529,18 +529,11 @@
         "url": "https://blinkit.com/cn/sharbat/cid/332/109"
       },
       {
-        "category": "mango-drink",
-        "display_name": "Mango Drink",
+        "category": "energy-drink",
+        "display_name": "Energy Drink",
         "l0_cat": "332",
-        "l1_cat": "1108",
-        "url": "https://blinkit.com/cn/mango-drink/cid/332/1108"
-      },
-      {
-        "category": "soda-water",
-        "display_name": "Soda Water",
-        "l0_cat": "332",
-        "l1_cat": "1599",
-        "url": "https://blinkit.com/cn/soda-water/cid/332/1599"
+        "l1_cat": "91",
+        "url": "https://blinkit.com/cn/energy-drink/cid/332/91"
       }
     ]
   },
@@ -717,18 +710,18 @@
         "url": "https://blinkit.com/cn/pouch-curd/cid/14/123"
       },
       {
-        "category": "white-bread",
-        "display_name": "White Bread",
-        "l0_cat": "14",
-        "l1_cat": "953",
-        "url": "https://blinkit.com/cn/white-bread/cid/14/953"
-      },
-      {
         "category": "salted-butter",
         "display_name": "Salted Butter",
         "l0_cat": "14",
         "l1_cat": "952",
         "url": "https://blinkit.com/cn/salted-butter/cid/14/952"
+      },
+      {
+        "category": "white-bread",
+        "display_name": "White Bread",
+        "l0_cat": "14",
+        "l1_cat": "953",
+        "url": "https://blinkit.com/cn/white-bread/cid/14/953"
       },
       {
         "category": "diced-cheese",
@@ -794,11 +787,11 @@
         "url": "https://blinkit.com/cn/elaichi-mouth-freshener/cid/9/1933"
       },
       {
-        "category": "mint-candies",
-        "display_name": "Mint Candies",
+        "category": "chewing-gum",
+        "display_name": "Chewing Gum",
         "l0_cat": "9",
         "l1_cat": "1930",
-        "url": "https://blinkit.com/cn/mint-candies/cid/9/1930"
+        "url": "https://blinkit.com/cn/chewing-gum/cid/9/1930"
       },
       {
         "category": "unsalted-buttermilk",
@@ -829,18 +822,11 @@
         "url": "https://blinkit.com/cn/sharbat/cid/332/109"
       },
       {
-        "category": "mango-drink",
-        "display_name": "Mango Drink",
+        "category": "energy-drink",
+        "display_name": "Energy Drink",
         "l0_cat": "332",
-        "l1_cat": "1108",
-        "url": "https://blinkit.com/cn/mango-drink/cid/332/1108"
-      },
-      {
-        "category": "soda-water",
-        "display_name": "Soda Water",
-        "l0_cat": "332",
-        "l1_cat": "1599",
-        "url": "https://blinkit.com/cn/soda-water/cid/332/1599"
+        "l1_cat": "91",
+        "url": "https://blinkit.com/cn/energy-drink/cid/332/91"
       }
     ]
   }

@@ -2,342 +2,134 @@ import json
 import glob
 import os
 
-from dotenv import load_dotenv
-
-load_dotenv()
+from scraper.visibility import get_visibility
 
 
-def get_location_data():
-    return {
-        "city": os.getenv("CITY"),
-
-        "latitude": float(
-            os.getenv("LATITUDE", 0)
-        ),
-
-        "longitude": float(
-            os.getenv("LONGITUDE", 0)
-        )
-    }
+def extract_text(value):
+    if isinstance(value, dict):
+        return value.get("text")
+    return value
 
 
-import os
-import json
-import glob
+def extract_price(product):
+    """
+    RAW extraction ONLY (no conversion)
+    """
+    if product.get("price") is not None:
+        return product.get("price")
+
+    if isinstance(product.get("normal_price"), dict):
+        return product["normal_price"].get("text")
+
+    if isinstance(product.get("mrp"), dict):
+        return product["mrp"].get("text")
+
+    return None
 
 
 def extract_products():
 
     products = []
 
-    location = get_location_data()
+    try:
+        location = get_visibility()
+        print("\nLOCATION RECEIVED:", location)
 
-    files = glob.glob(
-        "data/raw/*/products.json"
-    )
+    except Exception as e:
+        print(f"Visibility failed: {e}")
+        location = {
+            "city": None,
+            "state": None,
+            "city_id": None,
+            "latitude": float(os.getenv("LATITUDE", 0)),
+            "longitude": float(os.getenv("LONGITUDE", 0)),
+        }
 
-    print(
-        "Files found:",
-        len(files)
-    )
+    files = glob.glob("data/raw/*/products.json")
+    print("Files found:", len(files))
 
     for file in files:
 
         try:
-            with open(
-                file,
-                "r",
-                encoding="utf-8"
-            ) as f:
-
+            with open(file, "r", encoding="utf-8") as f:
                 data = json.load(f)
 
-            # fallback category
-            folder_category = os.path.basename(
-                os.path.dirname(file)
-            )
+            folder_category = os.path.basename(os.path.dirname(file))
 
-            # raw data already stored as list
             snippets = (
                 data
-                if isinstance(
-                    data,
-                    list
-                )
-                else (
-                    data
-                    .get(
-                        "response",
-                        {}
-                    )
-                    .get(
-                        "snippets",
-                        []
-                    )
-                )
+                if isinstance(data, list)
+                else data.get("response", {}).get("snippets", [])
             )
 
             for item in snippets:
 
-                if not isinstance(
-                    item,
-                    dict
-                ):
+                if not isinstance(item, dict):
                     continue
 
-                # --------------------
-                # HANDLE BOTH FORMATS
-                # --------------------
+                product = item.get("data") if item.get("data") else item
 
-                # flattened product
-                if item.get(
-                    "product_id"
-                ):
+                if not isinstance(product, dict):
+                    continue
 
-                    product = item
-
-                # raw blinkit snippet
-                else:
-
-                    product = item.get(
-                        "data",
-                        {}
-                    )
-
-                product_id = product.get(
-                    "product_id"
-                )
-
+                product_id = product.get("product_id")
                 if not product_id:
                     continue
 
-                # category fallback
-                category = (
-                    product.get(
-                        "category"
-                    )
-                    or folder_category
-                )
-
                 extracted_product = {
+                    "product_id": product_id,
+                    "merchant_id": product.get("merchant_id"),
 
-                    "product_id":
-                        product_id,
+                    "category": product.get("category") or folder_category,
+                    "parent_category": product.get("parent_category"),
+                    "ptype": product.get("ptype"),
 
-                    "merchant_id":
-                        product.get(
-                            "merchant_id"
-                        ),
+                    # raw text OR dict preserved
+                    "name": product.get("name"),
+                    "brand": product.get("brand_name") or product.get("brand"),
 
-                    "category":
-                        category,
+                    # 🔥 FIXED: correct raw price extraction
+                    "price": extract_price(product),
+                    "normal_price": product.get("normal_price"),
+                    "mrp": product.get("mrp"),
 
-                    "parent_category":
-                        product.get(
-                            "parent_category"
-                        ),
+                    "inventory": product.get("inventory"),
+                    "rating": product.get("rating"),
 
-                    "ptype":
-                        product.get(
-                            "ptype"
-                        ),
+                    "image_url": (
+                        product.get("image", {}).get("url")
+                        if isinstance(product.get("image"), dict)
+                        else product.get("image_url")
+                    ),
 
-                    "name":
-                        (
-                            product.get(
-                                "name",
-                                {}
-                            ).get(
-                                "text"
-                            )
-                            if isinstance(
-                                product.get(
-                                    "name"
-                                ),
-                                dict
-                            )
-                            else product.get(
-                                "name"
-                            )
-                        ),
+                    "in_stock": product.get("in_stock"),
+                    "is_sold_out": product.get("is_sold_out"),
 
-                    "brand":
-                        (
-                            product.get(
-                                "brand_name",
-                                {}
-                            ).get(
-                                "text"
-                            )
-                            if isinstance(
-                                product.get(
-                                    "brand_name"
-                                ),
-                                dict
-                            )
-                            else (
-                                product.get(
-                                    "brand_name"
-                                )
-                                or product.get(
-                                    "brand"
-                                )
-                            )
-                        ),
-
-                    "price":
-                        float(
-                            str(
-                                product.get(
-                                    "price",
-                                    product.get(
-                                        "normal_price",
-                                        ""
-                                    )
-                                )
-                            )
-                            .replace(
-                                "₹",
-                                ""
-                            )
-                            .strip()
-                            or 0
-                        ),
-
-                    "inventory":
-                        product.get(
-                            "inventory",
-                            0
-                        ),
-
-                    "rating":
-                        (
-                            float(
-                                product.get(
-                                    "rating",
-                                    0
-                                ) or 0
-                            )
-                            if not isinstance(
-                                product.get(
-                                    "rating"
-                                ),
-                                dict
-                            )
-                            else float(
-                                product.get(
-                                    "rating",
-                                    {}
-                                )
-                                .get(
-                                    "bar",
-                                    {}
-                                )
-                                .get(
-                                    "value",
-                                    0
-                                ) or 0
-                            )
-                        ),
-
-                    "image_url":
-                        (
-                            product.get(
-                                "image",
-                                {}
-                            ).get(
-                                "url"
-                            )
-                            if isinstance(
-                                product.get(
-                                    "image"
-                                ),
-                                dict
-                            )
-                            else product.get(
-                                "image_url"
-                            )
-                        ),
-
-                    "in_stock":
-                        (
-                            product.get(
-                                "in_stock"
-                            )
-                            if (
-                                "in_stock"
-                                in product
-                            )
-                            else not product.get(
-                                "is_sold_out",
-                                False
-                            )
-                        ),
-
-                    "city":
-                        location[
-                            "city"
-                        ],
-
-                    "latitude":
-                        location[
-                            "latitude"
-                        ],
-
-                    "longitude":
-                        location[
-                            "longitude"
-                        ]
+                    # location (raw)
+                    "city": location.get("city"),
+                    "state": location.get("state"),
+                    "city_id": location.get("city_id"),
+                    "latitude": location.get("latitude"),
+                    "longitude": location.get("longitude"),
                 }
 
-                products.append(
-                    extracted_product
-                )
+                products.append(extracted_product)
 
         except Exception as e:
+            print(f"Error reading {file}: {e}")
 
-            print(
-                f"Error reading "
-                f"{file}: {e}"
-            )
-
-    # --------------------
-    # REMOVE DUPLICATES
-    # --------------------
-
+    # dedupe
     unique = {}
-
     for p in products:
+        unique[p["product_id"]] = p
 
-        unique[
-            p["product_id"]
-        ] = p
+    extracted = list(unique.values())
 
-    extracted = list(
-        unique.values()
-    )
+    os.makedirs("data/extracted", exist_ok=True)
 
-    os.makedirs(
-        "data/extracted",
-        exist_ok=True
-    )
+    with open("data/extracted/extracted_products.json", "w", encoding="utf-8") as f:
+        json.dump(extracted, f, indent=2, ensure_ascii=False)
 
-    with open(
-        "data/extracted/extracted_products.json",
-        "w",
-        encoding="utf-8"
-    ) as f:
-
-        json.dump(
-            extracted,
-            f,
-            indent=2,
-            ensure_ascii=False
-        )
-
-    print(
-        f"Saved extracted data "
-        f"({len(extracted)} products)"
-    )
+    print(f"Saved extracted data ({len(extracted)} products)")
 
     return extracted

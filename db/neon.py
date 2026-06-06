@@ -12,29 +12,18 @@ def save_products(products):
 
     print("Connecting to Neon DB...")
 
-    database_url = os.getenv(
-        "DATABASE_URL"
-    )
+    database_url = os.getenv("DATABASE_URL")
 
     if not database_url:
-        print(
-            "ERROR: DATABASE_URL "
-            "not found in .env"
-        )
+        print("ERROR: DATABASE_URL " "not found in .env")
         return
 
     try:
-        connection = psycopg2.connect(
-            database_url
-        )
+        connection = psycopg2.connect(database_url)
 
-        print(
-            "Connected to Neon DB"
-        )
+        print("Connected to Neon DB")
 
-        cursor = (
-            connection.cursor()
-        )
+        cursor = connection.cursor()
 
         query = """
         INSERT INTO blinkit_products (
@@ -82,53 +71,25 @@ def save_products(products):
                 cursor.execute(
                     query,
                     (
-                        product.get(
-                            "product_id"
-                        ),
-                        product.get(
-                            "merchant_id"
-                        ),
-                        product.get(
-                            "name"
-                        ),
-                        product.get(
-                            "brand"
-                        ),
-                        product.get(
-                            "price"
-                        ),
-                        product.get(
-                            "inventory"
-                        ),
-                        product.get(
-                            "rating"
-                        ),
-                        product.get(
-                            "image_url"
-                        ),
-                        product.get(
-                            "in_stock"
-                        ),
-                        product.get(
-                            "city"
-                        ),
-                        product.get(
-                            "latitude"
-                        ),
-                        product.get(
-                            "longitude"
-                        )
-                    )
+                        product.get("product_id"),
+                        product.get("merchant_id"),
+                        product.get("name"),
+                        product.get("brand"),
+                        product.get("price"),
+                        product.get("inventory"),
+                        product.get("rating"),
+                        product.get("image_url"),
+                        product.get("in_stock"),
+                        product.get("city"),
+                        product.get("latitude"),
+                        product.get("longitude"),
+                    ),
                 )
 
                 inserted += 1
 
             except Exception as e:
-                print(
-                    f"Insert failed "
-                    f"for "
-                    f"{product.get('name')}"
-                )
+                print(f"Insert failed " f"for " f"{product.get('name')}")
                 print(e)
 
         connection.commit()
@@ -136,14 +97,8 @@ def save_products(products):
         cursor.close()
         connection.close()
 
-        print(
-            f"Saved "
-            f"{inserted} "
-            f"products to Neon DB"
-        )
+        print(f"Saved " f"{inserted} " f"products to Neon DB")
 
     except Exception as e:
-        print(
-            "DATABASE ERROR:"
-        )
+        print("DATABASE ERROR:")
         print(e)

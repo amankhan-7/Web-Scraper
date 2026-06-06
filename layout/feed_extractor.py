@@ -7,13 +7,7 @@ from layout.clean_utils import clean
 
 OUTPUT_FILE = Path("data/feed.json")
 
-TARGET_KEYWORDS = [
-    "layout",
-    "feed",
-    "home",
-    "listing",
-    "products"
-]
+TARGET_KEYWORDS = ["layout", "feed", "home", "listing", "products"]
 
 
 def is_useful(url: str) -> bool:
@@ -44,10 +38,7 @@ async def fetch():
                 except:
                     return
 
-                captured.append({
-                    "url": url,
-                    "data": data
-                })
+                captured.append({"url": url, "data": data})
 
                 print("📡 captured:", url)
 

@@ -5,5 +5,5 @@ HEADERS = {
         " Chrome/136.0.0.0 Safari/537.36"
     ),
     "accept": "application/json",
-    "content-type": "application/json"
+    "content-type": "application/json",
 }
